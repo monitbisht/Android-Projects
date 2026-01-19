@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Math Game</string>
+    <string name="welcome_message">WELCOME</string>
 </resources>
