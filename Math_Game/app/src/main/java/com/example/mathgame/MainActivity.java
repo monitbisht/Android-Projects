@@ -1,6 +1,8 @@
 package com.example.mathgame;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.button.MaterialButton;
+
 public class MainActivity extends AppCompatActivity {
+
+    MaterialButton additionButton, subtractionButton, multiplicationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,41 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        additionButton = findViewById(R.id.add_button);
+        subtractionButton = findViewById(R.id.sub_button);
+        multiplicationButton = findViewById(R.id.multiply_button);
+
+        navigation();
+    }
+
+    private void navigation() {
+        additionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Game.class);
+                intent.putExtra("topic", "addition");
+                startActivity(intent);
+            }
+        });
+
+        subtractionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Game.class);
+                intent.putExtra("topic", "subtraction");
+                startActivity(intent);
+            }
+        });
+
+        multiplicationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Game.class);
+                intent.putExtra("topic", "multiplication");
+                startActivity(intent);
+            }
         });
     }
 }
