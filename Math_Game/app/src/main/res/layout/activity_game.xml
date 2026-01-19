@@ -1,11 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    android:paddingTop="8dp"
     tools:context=".Game">
 
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Score :"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_alignParentStart="true"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/score_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_toEndOf="@id/score_text"
+        />
+
+    <TextView
+        android:id="@+id/life_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Life :"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/life_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/life_text"
+        />
+
+    <TextView
+        android:id="@+id/timer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time :"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_toStartOf="@id/time_remaining"
+        android:layout_marginEnd="4dp"
+        />
+
+    <TextView
+        android:id="@+id/time_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        />
+
+    <TextView
+        android:id="@+id/question_container"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Textview"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/life_text"
+        android:gravity="center"
+        android:layout_marginTop="64dp"/>
+
+    <EditText
+        android:id="@+id/answer_container"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:hint="Please write your answer here!"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/question_container"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginTop="64dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_gray"
+        android:layout_below="@id/answer_container"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Submit"
+        android:textSize="18dp"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_gray"
+        android:layout_below="@id/answer_container"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Next Ques"
+        android:textSize="18dp"/>
+
+</RelativeLayout>
