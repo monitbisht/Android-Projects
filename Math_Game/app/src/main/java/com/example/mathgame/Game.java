@@ -71,11 +71,13 @@ public class Game extends AppCompatActivity {
                     answer.setError("Please enter an answer");
                     return;
                 }
-                answer.setText("");
 
+
+                answer.setVisibility(View.INVISIBLE);
                 //User answered, stop the clock
                 pauseTimer();
-                userAnswer = Integer.valueOf(answer.getText().toString());
+                userAnswer = Integer.valueOf(answer.getText().toString());answer.setText("");
+                answer.setText("");
                 if (userAnswer == realAnswer) {
 
                     currentScore = currentScore + 10;
@@ -89,6 +91,8 @@ public class Game extends AppCompatActivity {
                     question.setText("Oops! you got the wrong answer!!");
 
                 }
+                answer.setText("");
+
                 submit.setVisibility(View.INVISIBLE);
                 next.setVisibility(View.VISIBLE);
             }
@@ -102,6 +106,7 @@ public class Game extends AppCompatActivity {
                     gameEnd();
                 } else {
                     game();
+                    answer.setVisibility(View.VISIBLE);
                     submit.setVisibility(View.VISIBLE);
                     answer.setText("");
                 }
