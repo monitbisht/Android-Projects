@@ -102,27 +102,33 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/dark_gray"
         android:layout_below="@id/answer_container"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
         android:text="Submit"
-        android:textSize="18dp"/>
+        android:textSize="24sp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:padding="12dp"
+        />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/dark_gray"
         android:layout_below="@id/answer_container"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
         android:text="Next Ques"
-        android:textSize="18dp"/>
+        android:textSize="24sp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:padding="12dp"
+        />
 
 </RelativeLayout>
