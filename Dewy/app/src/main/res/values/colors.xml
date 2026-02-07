@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_main">#121217</color>
+    <color name="background_card">#1C1C22</color>
+    <color name="navigation_bar">#000000</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8E8E93</color>
+    <color name="accent_yellow">#FFD60A</color>
+    <color name="border_forecast">#2C2C2E</color>
+    <color name="light_periwinkle">#c8d2ff</color>
+    <color name="philippine_gray">#8E8E93</color>
 </resources>
