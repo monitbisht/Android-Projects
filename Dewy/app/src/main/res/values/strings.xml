@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Dewy</string>
+    <string name="location_placeholder">Location</string>
+    <string name="temp_placeholder">18°C</string>
+    <string name="weather_category">Partly Cloudy</string>
+    <string name="high_temp">H:20°</string>
+    <string name="low_temp">L:9°</string>
+    <string name="wind_text">Wind</string>
+    <string name="wind_speed_placeholder">12km/h</string>
+    <string name="humidity_text">Humidity</string>
+    <string name="humidity_placeholder">50%</string>
+    <string name="pressure_text">Pressure</string>
+    <string name="pressure_placeholder">1013 hPa</string>
+    <string name="hourly_forecast_text">Hourly Forecast</string>
+
+
+
 </resources>

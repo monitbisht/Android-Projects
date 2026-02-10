@@ -4,11 +4,47 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_main">#121217</color>
     <color name="background_card">#1C1C22</color>
-    <color name="navigation_bar">#000000</color>
+    <color name="background_color">#000000</color>
     <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#8E8E93</color>
+    <color name="text_secondary">#a7a7ab</color>
     <color name="accent_yellow">#FFD60A</color>
     <color name="border_forecast">#2C2C2E</color>
     <color name="light_periwinkle">#c8d2ff</color>
     <color name="philippine_gray">#8E8E93</color>
+
+    <!-- Weather condition icon colors -->
+
+    <!-- Clear / Sunny -->
+    <color name="amber_sun">#FFB74D</color>
+
+    <!-- Partly Cloudy -->
+    <color name="soft_amber">#FFCC80</color>
+
+    <!-- Cloudy -->
+    <color name="cool_gray">#B0BEC5</color>
+
+    <!-- Rain -->
+    <color name="muted_blue">#64B5F6</color>
+
+    <!-- Thunderstorm -->
+    <color name="storm_purple">#9575CD</color>
+
+    <!-- Snow -->
+    <color name="icy_blue">#E3F2FD</color>
+
+    <!-- Fog / Mist -->
+    <color name="light_fog_gray">#CFD8DC</color>
+
+
+    <!-- Weather metric icon colors -->
+
+    <!-- Wind -->
+    <color name="soft_blue">#81D4FA</color>
+
+    <!-- Humidity -->
+    <color name="soft_teal">#4DB6AC</color>
+
+    <!-- Pressure -->
+    <color name="neutral_gray">#B0BEC5</color>
+
 </resources>
