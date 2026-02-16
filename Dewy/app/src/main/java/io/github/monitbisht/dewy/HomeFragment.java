@@ -1,7 +1,9 @@
 package io.github.monitbisht.dewy;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -9,22 +11,32 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Executor;
 
 public class HomeFragment extends Fragment {
     ActivityResultLauncher<String[]> locationPermissionRequest;
+    private FusedLocationProviderClient fusedLocationClient;
 
+    private double latitude ;
+    private double longitude;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -53,6 +65,8 @@ public class HomeFragment extends Fragment {
                                 .show();
                     }
                 });
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
     }
 
 
@@ -71,6 +85,7 @@ public class HomeFragment extends Fragment {
         // Checking the location permission
         if(isLocationPermissionGranted()){
             fetchLocation();
+
         }
         // Else requesting it from the user
         else {
@@ -102,7 +117,7 @@ public class HomeFragment extends Fragment {
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED ;
 
-        boolean coarseGranted = ContextCompat.checkSelfPermission(getContext(),
+        boolean coarseGranted = ContextCompat.checkSelfPermission(requireContext(),
                 Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
 
         return fineGranted || coarseGranted ;
@@ -116,6 +131,24 @@ public class HomeFragment extends Fragment {
         }
 
         private void fetchLocation(){
-            //TODO
-        }
+            // Fetching the location
+            if (ActivityCompat.checkSelfPermission(requireContext(),
+                    Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(requireContext(),
+                    Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermission();
+                return;
+            }
+
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(requireActivity(), new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if(location != null){
+                                latitude = location.getLatitude();
+                                longitude = location.getLongitude();
+                        }
+                    }
+        });
+    }
 }
