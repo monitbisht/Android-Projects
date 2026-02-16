@@ -44,10 +44,4 @@ dependencies {
 
     // Location dependency for Google Play services
     implementation(libs.google.play.services.location)
-
-    // Retrofit dependency
-    implementation(libs.retrofit)
-
-    // Retrofit GSON xconverter dependency
-    implementation(libs.converter.gson)
 }
